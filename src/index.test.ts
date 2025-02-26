@@ -23,4 +23,12 @@ describe("Sum function", () => {
     expect(sum("1\n2,3,4,5")).toBe(15);
   });
 
+  it("should handle the new delimiter and return the sum of multiple numbers passed", () => {    
+    expect(sum("//;\n1;2;3;4;5")).toBe(15);
+  });
+
+  it("should throw an error when a negative number is passed", () => {
+    expect(() => sum("1,-2,3,4,5")).toThrowError("Negatives not allowed: -2");
+  });
+  
 });
