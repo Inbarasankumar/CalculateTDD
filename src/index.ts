@@ -1,5 +1,4 @@
-
-
-export const sum = (a: string): number => {
-    return -1;
-}
+export const sum = (sumOf: string): number => {
+  if (sumOf === "") return 0;
+  return -1;
+};
