@@ -17,4 +17,10 @@ describe("Sum function", () => {
   it("should return the sum of multiple numbers when multiple numbers are passed", () => {
     expect(sum("1,2,3,4,5")).toBe(15);
   });
+
+  
+  it("should handle the new line and return the sum of multiple numbers passed", () => {
+    expect(sum("1\n2,3,4,5")).toBe(15);
+  });
+
 });
