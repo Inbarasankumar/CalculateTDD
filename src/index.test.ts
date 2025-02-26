@@ -26,6 +26,10 @@ describe("Sum function", () => {
     expect(sum("//;\n1;2;3;4;5")).toBe(15);
   });
 
+  it("should handle the custom delimiter and return the sum of multiple numbers passed", () => {
+    expect(sum("//>\n1>2>3>4>5")).toBe(15);
+  });
+
   it("should throw an error when a negative number is passed", () => {
     expect(() => sum("1,-2,3,4,5")).toThrowError(
       "negative numbers not allowed -2"
@@ -33,7 +37,7 @@ describe("Sum function", () => {
   });
 
   it("should throw an error when multiple negative numbers are passed", () => {
-    expect(() => sum("1,-2,3,-4,5")).toThrowError(
+    expect(() => sum("//;\n1;1,-2,3,-4,5")).toThrowError(
       "negative numbers not allowed -2,-4"
     );
   });
